@@ -29,7 +29,6 @@ public class Shop {
                     break;
                 default:
                     System.out.println("Die gewählte Funktion ist nicht verfügbar.");
-                    zeigeWillkommensMenue();
             }
         }
     }
