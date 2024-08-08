@@ -3,44 +3,46 @@ package de.shopName;
 import java.util.Scanner;
 
 public class Shop {
+    static Scanner scan;
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        zeigeWillkommensMenue(scan);
+        scan = new Scanner(System.in);
+        zeigeWillkommensMenue();
     }
 
-    private static void zeigeWillkommensMenue(Scanner scan) {
-        System.out.println("Willkommen im Shop. Was wollen Sie tun (K (Kundenanlage), E (Eventanlage),B (Buchung)):");
-        String antwort = scan.next();
+    private static void zeigeWillkommensMenue() {
+        while (true) {
 
-        switch (antwort) {
-            case "K":
-                starteKundenanlage(scan);
-                break;
-            case "E":
-                starteEventanlage(scan);
-                break;
-            case "B":
-                starteBuchung(scan);
-                break;
-            default:
-                System.out.println("Die gewählte Funktion ist nicht verfügbar.");
-                zeigeWillkommensMenue(scan);
+            System.out
+                    .println("Willkommen im Shop. Was wollen Sie tun (K (Kundenanlage), E (Eventanlage),B (Buchung)):");
+            String antwort = scan.next();
+
+            switch (antwort) {
+                case "K":
+                    starteKundenanlage();
+                    break;
+                case "E":
+                    starteEventanlage();
+                    break;
+                case "B":
+                    starteBuchung();
+                    break;
+                default:
+                    System.out.println("Die gewählte Funktion ist nicht verfügbar.");
+                    zeigeWillkommensMenue();
+            }
         }
     }
 
-    private static void starteBuchung(Scanner scan) {
+    private static void starteBuchung() {
         System.out.println("Buchung wurde gestartet");
-        zeigeWillkommensMenue(scan);
     }
 
-    private static void starteEventanlage(Scanner scan) {
+    private static void starteEventanlage() {
         System.out.println("Eventanlage wurde gestartet");
-        zeigeWillkommensMenue(scan);
     }
 
-    private static void starteKundenanlage(Scanner scan) {
+    private static void starteKundenanlage() {
         System.out.println("Kundenanlage wurde gestartet");
-        zeigeWillkommensMenue(scan);
     }
 }
